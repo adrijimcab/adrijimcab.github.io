@@ -34,6 +34,9 @@
         .competencies li { margin-bottom: 0.8rem; position: relative; padding-left: 1.2rem; }
         .competencies li::before { content: "→"; position: absolute; left: 0; color: var(--accent); }
 
+        .stats-card-container { display: flex; justify-content: center; margin-bottom: 3rem; }
+        .stats-card-container img { max-width: 100%; border-radius: 12px; }
+
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .card { background: var(--surface); border: 1px solid var(--border); padding: 1.5rem; border-radius: 12px; transition: 0.3s; height: 160px; display: flex; flex-direction: column; justify-content: space-between; }
         .card:hover { border-color: var(--accent); transform: translateY(-3px); }
@@ -60,6 +63,11 @@
             <div class="profile-summary">
                 Leading the evolution of complex <strong>frontend platforms</strong> in high-criticality environments for over <strong>9 years</strong>. Focused on scalable, maintainable ecosystems aligned with business goals.
             </div>
+            
+            <div class="stats-card-container">
+                <img src="https://github-readme-stats.vercel.app/api?username=adrijimcab&show_icons=true&theme=tokyonight&count_private=true&hide_border=false" alt="Adrián's GitHub Stats" />
+            </div>
+
             <div class="competencies">
                 <div>
                     <ul>
