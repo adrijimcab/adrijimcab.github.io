@@ -3,59 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adrián Jiménez | Software Architect</title>
+    
+    <!-- SEO & Meta Tags -->
+    <title>Adrián Jiménez | Software Architect & Full Stack Expert</title>
+    <meta name="description" content="Adrián Jiménez - Software Architect specialized in AI Agent ecosystems, React, and Modern Web Architectures. Building the future of scalable software.">
+    <meta name="keywords" content="Software Architect, Full Stack Developer, AI Agent, React, Node.js, TypeScript, adrijimcab">
+    <link rel="canonical" href="https://adrijimcab.github.io">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://adrijimcab.github.io">
+    <meta property="og:title" content="Adrián Jiménez | Software Architect">
+    <meta property="og:description" content="Architecting high-fidelity AI ecosystems and modern web applications.">
+    <meta property="og:image" content="https://github.com/adrijimcab.png">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Adrián Jiménez",
+      "url": "https://adrijimcab.github.io",
+      "jobTitle": "Software Architect",
+      "sameAs": [
+        "https://github.com/adrijimcab",
+        "https://linkedin.com/in/adrianjimenezcabello"
+      ]
+    }
+    </script>
+
     <style>
         :root {
-            --bg: #0a0b10;
-            --text: #f8f9fa;
+            --bg: #050505;
+            --surface: #111111;
             --accent: #00b4d8;
-            --secondary: #6c757d;
+            --text: #ffffff;
+            --text-dim: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
         }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            text-align: center;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-        p { color: var(--secondary); font-size: 1.2rem; margin-top: 0; }
-        .links { margin-top: 2rem; }
-        a {
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* --- Header / Hero --- */
+        header {
+            margin-bottom: 6rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .typewriter {
             color: var(--accent);
-            text-decoration: none;
-            border: 1px solid var(--accent);
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-weight: bold;
+            font-family: monospace;
+            font-size: 1.2rem;
         }
-        a:hover {
-            background-color: var(--accent);
-            color: var(--bg);
+
+        /* --- Content Sections --- */
+        section { margin-bottom: 5rem; }
+        h2 { 
+            font-size: 0.8rem; 
+            text-transform: uppercase; 
+            letter-spacing: 4px; 
+            color: var(--text-dim); 
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
         }
-        .status {
-            margin-top: 3rem;
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            background: rgba(0, 180, 216, 0.05);
+        }
+
+        .card h3 { margin-bottom: 0.5rem; font-size: 1.25rem; }
+        .card p { color: var(--text-dim); font-size: 0.95rem; }
+
+        .tag {
+            font-size: 0.7rem;
+            background: var(--glass);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        /* --- Stats / Metrics --- */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        @media (max-width: 600px) {
+            .metrics-grid { grid-template-columns: 1fr; }
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: 10rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-dim);
             font-size: 0.9rem;
-            opacity: 0.6;
+        }
+
+        a { color: var(--accent); text-decoration: none; transition: 0.3s; }
+        a:hover { opacity: 0.7; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .blur-bg {
+            position: fixed;
+            top: 0; right: 0;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.07) 0%, transparent 70%);
+            z-index: -1;
+            filter: blur(60px);
         }
     </style>
 </head>
 <body>
-    <h1>Adrián Jiménez</h1>
-    <p>Software Architect | Full Stack Developer | AI Enthusiast</p>
+    <div class="blur-bg"></div>
     
-    <div class="links">
-        <a href="https://github.com/adrijimcab">Visit my GitHub Profile</a>
+    <div class="container">
+        <header>
+            <h1 class="hero-title">Adrián<br>Jiménez.</h1>
+            <div class="typewriter" id="typewriter"></div>
+        </header>
+
+        <main>
+            <section id="about">
+                <h2>The Architect</h2>
+                <p style="font-size: 1.2rem; max-width: 600px;">
+                    Specializing in high-fidelity <strong>AI Agent ecosystems</strong> and modern web architectures. 
+                    I bridge the gap between complex logic and professional visual systems.
+                </p>
+            </section>
+
+            <section id="projects">
+                <h2>Featured Work</h2>
+                <div class="grid">
+                    <div class="card">
+                        <span class="tag">Production</span>
+                        <h3>Marta Showcase</h3>
+                        <p>Full-stack ecommerce platform with real-time inventory and AI-driven recommendations.</p>
+                        <br>
+                        <a href="https://github.com/adrijimcab/marta-showcase">Explore Source →</a>
+                    </div>
+                    <div class="card">
+                        <span class="tag">Internal</span>
+                        <h3>BFF Framework</h3>
+                        <p>A strict Backend-for-Frontend architectural pattern for enterprise security.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="stats">
+                <h2>Activity Overview</h2>
+                <div class="metrics-grid">
+                    <img src="https://github-readme-stats.vercel.app/api?username=adrijimcab&show_icons=true&theme=tokyonight&hide_border=true&bg_color=050505" width="100%" alt="Stats">
+                    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=adrijimcab&layout=compact&theme=tokyonight&hide_border=true&bg_color=050505" width="100%" alt="Languages">
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div>© 2026 Adrián Jiménez</div>
+            <div>
+                <a href="https://github.com/adrijimcab">GitHub</a> · 
+                <a href="https://linkedin.com/in/adrianjimenezcabello">LinkedIn</a>
+            </div>
+        </footer>
     </div>
 
-    <div class="status">
-        🚀 Site is currently under construction with a Modern Web Architecture.
-    </div>
+    <script>
+        const text = "Architecting the future of AI and Web.";
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, 100);
+            }
+        }
+        window.onload = type;
+    </script>
 </body>
 </html>
